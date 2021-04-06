@@ -1,0 +1,7 @@
+Adicionando Módulo de aplicativo
+    npm install <modulo> [-g]
+                         [--global]
+
+Exemplo de módulo de aplicativo:
+    json-server
+    - instalando: npm install json-server --g
