@@ -1,0 +1,9 @@
+Criando a estrutura para o projeto:
+    npm init   (criar o arquivo package.json)
+
+Adicionando dependencias (cria pasta node_modules)
+    npm install <modulo> [--save]                 (módulo. conteudo))
+                         (salva no package.json)
+
+Recuperando a pasta node_module com as dependencias no package.json
+    npm install
