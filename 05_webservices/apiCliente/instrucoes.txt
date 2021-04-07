@@ -1,0 +1,4 @@
+Maneiras de consumir uma API:
+    javascript: usando a função fetch()
+    Node: módulos   'node-fetch' ou
+                    'axios'
