@@ -1,0 +1,10 @@
+Projetos Angular - Utiliza o Angular CLI (comandos ng)
+
+Para instalar o angular CLI:
+    npm install -g @angular/cli
+
+Para criar um projeto:
+    ng new app-eventos
+
+Para executar:
+    ng serve
