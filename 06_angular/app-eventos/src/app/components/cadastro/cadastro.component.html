@@ -5,6 +5,17 @@
         <div class="col-sm-6">
             <h2>Lista de Eventos</h2>
 
+            <button type="button" 
+                (click)='novo()'
+                class="btn btn-primary">Novo</button>
+
+            <div class="form-group">
+                <label for="descricao">Informe a descrição</label>
+                <input type="text" 
+                    #busca (keyup)="0"
+                    class="form-control" >
+            </div>
+
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -15,35 +26,51 @@
                 </thead>
                 <tbody>
                     <!-- toda diretiva começa com * -->
-                    <tr *ngFor="let item of listaEventos">
-                        <td>{{item.descricao}}</td>
-                        <td>{{item.data}}</td>
-                        <td>{{item.preco}}</td>
+                    <tr *ngFor="let item of listaEventos | sublista:busca.value" (click)="selecionar(item)">
+                        <td><a routerLink="/eventos">{{item.descricao | uppercase}}</a></td> <!-- filtro com pipe - uppercase() -->
+                        <td>{{item.data | date: 'dd/MM/yyyy'}}</td> <!-- filtro com pipe - date(format) -->
+                        <td>{{item.preco | currency:'R$ '}}</td> <!-- se tiver mais parametros: | filtro:param1:param2:param3 -->
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-sm-6">
             <h2>Cadastro de Eventos</h2>
-            <form>
 
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao">
-                </div>
+            <div *ngIf="eventoSelecionado">
+                <form>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" 
+                            [(ngModel)]="eventoSelecionado.descricao" 
+                            class="form-control" 
+                            id="descricao"
+                            name="descricao">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" 
+                            [(ngModel)]="eventoSelecionado.data" 
+                            class="form-control" 
+                            id="data"
+                            name="data">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="preco">Preço</label>
+                        <input type="text" 
+                            [(ngModel)]="eventoSelecionado.preco" 
+                            class="form-control" 
+                            id="preco"
+                            name="preco">
+                    </div>
+                    <button type="button" 
+                        (click)="incluir(eventoSelecionado)"
+                        class="btn btn-primary">Incluir</button>
+                </form>
+            </div>
 
-                <div class="form-group">
-                    <label for="data">Data</label>
-                    <input type="date" class="form-control" id="data">
-                </div>
-
-                <div class="form-group">
-                    <label for="preco">Preço</label>
-                    <input type="text" class="form-control" id="preco">
-                </div>
-
-                <button type="button" class="btn btn-primary">Incluir</button>
-            </form>
         </div>
     </div>
 

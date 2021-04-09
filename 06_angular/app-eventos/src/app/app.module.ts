@@ -9,6 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/notfound/notfound.component';
+import { EventosService } from './services/eventos.service';
+import { FormsModule } from '@angular/forms';
+import { SubLista } from './filters/sublista.filter';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { NotFoundComponent } from './components/notfound/notfound.component';
     MenuComponent,
     HomeComponent,
     CadastroComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SubLista
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, 
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
-  providers: [],
+  providers: [EventosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
