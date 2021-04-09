@@ -8,3 +8,9 @@ Para criar um projeto:
 
 Para executar:
     ng serve
+
+Criando componentes
+
+    ng generate component cadastro
+    ou
+    ng g c cadastro
