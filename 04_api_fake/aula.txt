@@ -5,3 +5,10 @@ Adicionando Módulo de aplicativo
 Exemplo de módulo de aplicativo:
     json-server
     - instalando: npm install json-server --g
+
+Executando:
+    json-server --watch db.json
+                                    --port ou -p para trocar a porta (padrao é 3000)
+
+Documentação:
+https://www.npmjs.com/package/json-server#getting-started
