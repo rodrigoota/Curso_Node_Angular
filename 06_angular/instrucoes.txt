@@ -11,6 +11,24 @@ Para executar:
 
 Criando componentes
 
-    ng generate component cadastro
+    ng generate component components/cadastro
     ou
     ng g c cadastro
+
+
+Criando classes:
+
+    ng generate class classes/produto
+    ou
+    ng g class
+
+Criando services:
+
+    ng generate service services/produtos
+
+
+
+ Diferença Promise x Observable
+    Promise: executa imediatamente uma unica vez
+    Observable: executa e aguarda o momento para ser consumido.
+                Pode ser reutilizado mais de uma vez.
